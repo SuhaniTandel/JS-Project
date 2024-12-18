@@ -1,26 +1,21 @@
-document.getElementById('feedbackForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent form submission
-    
-    // Get form input values
-    const name = document.getElementById('name').value;
-    const feedback = document.getElementById('feedback').value;
-    
-    // Check if inputs are not empty
-    if (name && feedback) {
-      // Display the feedback on the page
-      document.getElementById('feedbackOutput').innerHTML = `
-        <strong>Name:</strong> ${name}<br>
-        <strong>Feedback:</strong> ${feedback}
-      `;
-      
-      // Log the feedback in the console
-      console.log("Feedback received:");
-      console.log("Name: " + name);
-      console.log("Feedback: " + feedback);
-      
-      // Clear the form fields after submission
-      document.getElementById('feedbackForm').reset();
-    } else {
-      alert('Please fill in both fields before submitting!');
-    }
-  });
+document.getElementById('registrationForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  // Get form data
+  const name = document.getElementById('name').value;
+  const enrollment = document.getElementById('enrollment').value;
+  const division = document.getElementById('division').value;
+  const email = document.getElementById('email').value;
+
+  // Display data in console
+  console.log('Form Data:');
+  console.log('Name:', name);
+  console.log('Enrollment Number:', enrollment);
+  console.log('Division:', division);
+  console.log('Email:', email);
+
+  // Display thank you message and name
+  document.getElementById('userName').textContent = name;
+  document.getElementById('thankYouMessage').style.display = 'block';
+  document.getElementById('registrationForm').reset(); // Reset form fields
+});

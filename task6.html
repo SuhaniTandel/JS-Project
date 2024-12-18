@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Converter</title>
+   <link rel="stylesheet" href="task6.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Unit Converter</h1>
+
+        <!-- Temperature Conversion -->
+        <h2>Temperature Converter</h2>
+        <div class="radio-group">
+            <label><input type="radio" name="tempType" value="CtoF" checked> Celsius to Fahrenheit</label>
+            <label><input type="radio" name="tempType" value="FtoC"> Fahrenheit to Celsius</label>
+        </div>
+        <label for="temperatureInput">Temperature</label>
+        <input type="number" id="temperatureInput" placeholder="Enter temperature">
+
+        <!-- Mass Conversion -->
+        <h2>Mass Converter</h2>
+        <label for="massInput">Mass (Kilograms)</label>
+        <input type="number" id="massInput" placeholder="Enter mass in kilograms">
+
+        <!-- Height Conversion -->
+        <h2>Height Converter</h2>
+        <label for="heightInput">Height (Meters)</label>
+        <input type="number" id="heightInput" placeholder="Enter height in meters">
+
+        <button onclick="convertUnits()">Convert</button>
+
+        <div class="result" id="resultOutput"></div>
+    </div>
+
+    <script src="task6.js"></script>
+</body>
+</html>
