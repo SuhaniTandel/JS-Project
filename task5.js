@@ -1,51 +1,54 @@
-function rollDice() {
-    // Get the selected player (either Player 1 or Player 2)
-    const player1Radio = document.getElementById("player1");
-    const player2Radio = document.getElementById("player2");
+const roll1Btn = document.getElementById("roll1");
+const roll2Btn = document.getElementById("roll2");
+const resetBtn = document.getElementById("reset");
+const score1Display = document.getElementById("score1");
+const score2Display = document.getElementById("score2");
+const winnerDisplay = document.getElementById("winner");
 
-    // If no player is selected, return
-    if (!player1Radio.checked && !player2Radio.checked) {
-        alert("Please select a player to roll the dice.");
-        return;
-    }
+let Player1Score = 0;
+let Player2Score = 0;
 
-    // Generate random dice roll (1-6)
-    const diceRoll = Math.floor(Math.random() * 6) + 1;
+// Enable Player 1 button from the start
+roll1Btn.disabled = false; 
+roll2Btn.disabled = true; // Player 2 cannot roll until Player 1 has rolled
 
-    // Declare variables for the rolls of both players
-    let player1Roll = 0;
-    let player2Roll = 0;
+roll1Btn.addEventListener("click", () => {
+  // Player 1 rolls the dice
+  Player1Score = Math.floor(Math.random() * 6) + 1;
+  score1Display.textContent = Player1Score;
 
-    // Assign the dice roll to the appropriate player
-    if (player1Radio.checked) {
-        player1Roll = diceRoll;
-        document.getElementById("player1Dice").innerText = player1Roll;
-        console.log(`Player 1 rolled a ${player1Roll}`);
-    } else if (player2Radio.checked) {
-        player2Roll = diceRoll;
-        document.getElementById("player2Dice").innerText = player2Roll;
-        console.log(`Player 2 rolled a ${player2Roll}`);
-    }
+  // Disable Player 1 button and enable Player 2 button
+  roll1Btn.disabled = true;
+  roll2Btn.disabled = false;
+});
 
-    // Now that both players have rolled, compare the results
-    // Get the dice roll values of both players (in case a player hasn't rolled yet)
-    player1Roll = parseInt(document.getElementById("player1Dice").innerText) || 0;
-    player2Roll = parseInt(document.getElementById("player2Dice").innerText) || 0;
-    
-    let winnerMessage = "";
+roll2Btn.addEventListener("click", () => {
+  // Player 2 rolls the dice
+  Player2Score = Math.floor(Math.random() * 6) + 1;
+  score2Display.textContent = Player2Score;
 
-    // Compare the dice rolls to determine the winner
-    if (player1Roll > player2Roll) {
-        winnerMessage = "Player 1 Wins!";
-        console.log(`Player 1 wins with a roll of ${player1Roll} vs ${player2Roll}.`);
-    } else if (player2Roll > player1Roll) {
-        winnerMessage = "Player 2 Wins!";
-        console.log(`Player 2 wins with a roll of ${player2Roll} vs ${player1Roll}.`);
-    } else {
-        winnerMessage = "It's a Tie!";
-        console.log(`It's a tie with both players rolling ${player1Roll}.`);
-    }
+  // Disable Player 2 button after roll
+  roll2Btn.disabled = true;
 
-    // Display the winner message
-    document.getElementById("winner").innerText = winnerMessage;
-}
+  // Determine the winner
+  if (Player1Score > Player2Score) {
+    winnerDisplay.textContent = "🏆 Player 1 Wins!";
+  } else if (Player2Score > Player1Score) {
+    winnerDisplay.textContent = "🏆 Player 2 Wins!";
+  } else {
+    winnerDisplay.textContent = "🤝 It's a Tie!";
+  }
+});
+
+resetBtn.addEventListener("click", () => {
+  // Reset scores and UI
+  Player1Score = 0;
+  Player2Score = 0;
+  score1Display.textContent = "0";
+  score2Display.textContent = "0";
+  winnerDisplay.textContent = "";
+
+  // Enable Player 1 roll and disable Player 2 roll
+  roll1Btn.disabled = false;
+  roll2Btn.disabled = true;
+});

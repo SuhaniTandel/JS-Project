@@ -18,11 +18,13 @@
             <input type="radio" id="player2" name="player" value="player2">
         </div>
         
-        <button onclick="rollDice()">Roll Dice</button>
+        <button id="roll1" disabled>Roll Player 1</button>
+        <button id="roll2" disabled>Roll Player 2</button>
+        <button id="reset">Reset</button>
         
         <div class="result">
-            <p id="player1Roll">Player 1 Roll: <span id="player1Dice">0</span></p>
-            <p id="player2Roll">Player 2 Roll: <span id="player2Dice">0</span></p>
+            <p>Player 1 Roll: <span id="score1">0</span></p>
+            <p>Player 2 Roll: <span id="score2">0</span></p>
         </div>
         
         <div id="winner"></div>
