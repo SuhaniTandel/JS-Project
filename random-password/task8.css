@@ -1,7 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #001f00;
-  color: #fff;
+  background-color: #e9f3fa;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,41 +9,68 @@ body {
 }
 
 .container {
-  text-align: center;
-  background-color: #d5e313;
-  padding: 20px 40px;
+  background: #999df3;
   border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  padding: 20px 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  text-align: center;
 }
 
 h1 {
-  font-size: 2rem;
-  color: #5b27ae;
-  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 20px;
 }
 
-p {
-  font-size: 1rem;
-  margin-bottom: 15px;
+.form-group {
+  margin: 10px 0;
+  text-align: left;
 }
 
-.hint {
-  font-style: italic;
-  color: #c4c4c4;
-  margin-top: 15px;
+label {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+input[type="number"] {
+  width: 60px;
+  text-align: center;
+  margin-left: 5px;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
 }
 
 button {
-  font-size: 1.2rem;
-  padding: 10px 20px;
-  background-color: #5374e9;
+  background-color: #80a8f2;
   color: #fff;
   border: none;
+  padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  font-size: 1rem;
+  margin-top: 10px;
 }
 
 button:hover {
-  background-color: #6793ec;
+  background-color: #7d67eb;
+}
+
+.output {
+  margin-top: 20px;
+  text-align: left;
+}
+
+textarea {
+  width: 100%;
+  height: 50px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  font-family: monospace;
+  font-size: 0.9rem;
+  background: #f9f9f9;
+  resize: none;
 }
