@@ -1,49 +1,33 @@
-function randomNumber() {
-    // Get the range from the user
-    let startRange = parseInt(window.prompt("Enter the starting range: "));
-    let endRange = parseInt(window.prompt("Enter the ending range: "));
-
-    // Validate the input
+document.getElementById("startGame").addEventListener("click", function () {
+    const startRange = parseInt(prompt("Enter the starting range: ", "1"));
+    const endRange = parseInt(prompt("Enter the ending range: ", "100"));
+  
     if (isNaN(startRange) || isNaN(endRange) || startRange >= endRange) {
-        window.alert("Invalid range. Please enter valid starting and ending numbers, with the starting number less than the ending number.");
-        return;
+      alert("Invalid range! Please enter valid numbers with the starting range less than the ending range.");
+      return;
     }
-
-    // Generate the random number
+  
     const randomNum = Math.floor(Math.random() * (endRange - startRange + 1)) + startRange;
     let guess;
-
-    // Game introduction
-    window.alert(`Welcome to the Number Guessing Game! 🎮\nTry to guess the number I'm thinking of, between ${startRange} and ${endRange}.`);
-
-    // Start the guessing loop
-    do {
-        guess = window.prompt("Enter your guess: ");
-        
-        // Check if user canceled the prompt
-        if (guess === null) {
-            window.alert("Game exited. See you next time! 👋");
-            return;
-        }
-
-        // Convert guess to an integer
-        guess = parseInt(guess);
-
-        if (isNaN(guess)) {
-            window.alert("Invalid input. Please enter a valid number.");
-            continue;
-        }
-
-        // Provide feedback on the guess
-        if (guess < randomNum) {
-            window.alert("Too low! Try again.👇");
-        } else if (guess > randomNum) {
-            window.alert("Too high! Try again.👆");
-        } else {
-            window.alert("Congratulations! 🎉 You've guessed the number correctly!");
-        }
-    } while (guess !== randomNum);
-}
-
-// Start the game
-randomNumber();
+  
+    alert(`I have selected a number between ${startRange} and ${endRange}. Can you guess what it is?`);
+  
+    while (true) {
+      guess = parseInt(prompt("Enter your guess: "));
+  
+      if (isNaN(guess)) {
+        alert("Please enter a valid number.");
+        continue;
+      }
+  
+      if (guess < randomNum) {
+        alert("Too low! Try again. 👇");
+      } else if (guess > randomNum) {
+        alert("Too high! Try again. 👆");
+      } else {
+        alert("Congratulations! 🎉 You've guessed the number correctly!");
+        break;
+      }
+    }
+  });
+  
