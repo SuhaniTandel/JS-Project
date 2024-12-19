@@ -1,0 +1,63 @@
+/* Overall page background and text */
+body {
+    background-color: #87CEEB; /* Sky Blue */
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    margin-top: 30px;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #00BFFF; /* Deep Sky Blue */
+    color: #fff;
+    font-size: 18px;
+}
+
+td {
+    background-color: #f9f9f9;
+}
+
+/* Alternate row colors */
+tr:nth-child(even) td {
+    background-color: #f0f8ff; /* Alice Blue */
+}
+
+tr:hover td {
+    background-color: #87CEFA; /* Lighter Sky Blue */
+}
+
+/* Link styling */
+a {
+    color: #1E90FF; /* Dodger Blue */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #4682B4; /* Steel Blue */
+    text-decoration: underline;
+}
+
+/* Title styling */
+h1 {
+    text-align: center;
+    color: #ffffff;
+    font-size: 36px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
